@@ -2,7 +2,7 @@ import actionTypes from './types';
 import utils from '../utils/utils';
 
 const INITIAL_STATE = {
-    fileProgess: {}
+    fileProgress: {}
 }
 
 const uploadFilesReducer = (state = INITIAL_STATE, action) => {
@@ -11,9 +11,9 @@ const uploadFilesReducer = (state = INITIAL_STATE, action) => {
         case actionTypes.SET_FILES_UPLOAD:
             return {
                 ...state,
-                fileProgess: {
-                    ...state.fileProgess,
-                    ...utils(state, action.payload),
+                fileProgress: {
+                    ...state.fileProgress,
+                    ...utils(state.fileProgress, action.payload),
                 }
             }
     
