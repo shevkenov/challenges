@@ -3,6 +3,7 @@ import './App.css';
 import { useDispatch } from 'react-redux'
 
 import setUploadFiles from './redux/actions';
+import UploadProgress from './components/uploadProgress/UploadProgress';
 
 function App() {
   const dispatch = useDispatch();
@@ -11,7 +12,6 @@ function App() {
     e.preventDefault();
 
     dispatch(setUploadFiles(e.target.files));
-    console.log(e.target.files);
     
     e.target.value = ''
   }
@@ -22,6 +22,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <input type="file" name="file" multiple="multiple" onChange={handleUploadFiles}/>
       </header>
+      <UploadProgress />
     </div>
   );
 }

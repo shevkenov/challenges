@@ -9,10 +9,10 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
 //redux
-import uploadFilesReducer from './redux/reducer';
+import UploadFile from './redux/reducer';
 import { combineReducers, createStore, applyMiddleware, compose } from 'redux'
 const rootReducer = combineReducers({
-  uploadFilesReducer
+  UploadFile
 })
 
 //middleware
