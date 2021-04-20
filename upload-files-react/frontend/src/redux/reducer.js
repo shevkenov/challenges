@@ -16,6 +16,60 @@ const uploadFilesReducer = (state = INITIAL_STATE, action) => {
                     ...utils(state.fileProgress, action.payload),
                 }
             }
+        case actionTypes.SET_UPLOAD_PROGRESS:
+            return {
+                ...state,
+                fileProgress: {
+                    ...state.fileProgress,
+                    [action.payload.id]: {
+                        ...state.fileProgress[action.payload.id],
+                        progress: action.payload.progress
+                    }
+                }
+            }
+        case actionTypes.SET_SUCCESS_UPLOAD_FILE:
+            return {
+                ...state,
+                fileProgress: {
+                    ...state.fileProgress,
+                    [action.payload]: {
+                        ...state.fileProgress[action.payload],
+                        status: 1
+                    }
+                }
+            }
+        case actionTypes.SET_FAILURE_UPLOAD_FILE:
+            return {
+                ...state,
+                fileProgress: {
+                    ...state.fileProgress,
+                    [action.payload]: {
+                        ...state.fileProgress[action.payload],
+                        status: 0,
+                        progress: 0
+                    }
+                }
+            }
+        
+        case actionTypes.SET_REMOVE_FILE:
+            const remainFiles = Object.values(state.fileProgress).reduce((acc, cur, index) => {
+                if(cur.id !== action.payload) {
+                    acc = {
+                        ...acc,
+                        [index]: {
+                            ...cur
+                        }
+                    }
+                }
+                return acc
+            },{})
+
+            return {
+                ...state,
+                fileProgress: {
+                    ...remainFiles,
+                }
+            }
     
         default:
             return state
