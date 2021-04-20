@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { useDispatch } from 'react-redux'
 
-import setUploadFiles from './redux/actions';
+import { setUploadFiles } from './redux/actions';
 import UploadProgress from './components/uploadProgress/UploadProgress';
 
 function App() {
@@ -26,5 +26,7 @@ function App() {
     </div>
   );
 }
+
+
 
 export default App;
