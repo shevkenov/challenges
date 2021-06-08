@@ -1,0 +1,110 @@
+
+html{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background: lightgray;
+}
+
+.card{
+    background: #e7f1ea;
+    width: 300px;
+    height: 400px;
+    border: 2px solid hotpink;
+}
+
+.card:hover .blob{
+    animation: expand 2s;
+    animation-fill-mode: forwards;
+}
+
+.card-content{
+    background: #fff;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    height: 50%;
+}
+
+.card-hero{
+    position: relative;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    overflow: hidden;
+    height: 50%;
+}
+
+.card-title{
+    font-size: 22px;
+    font-weight: 600;
+    z-index: 100;
+    padding: 1rem;
+    text-align: right;
+    
+}
+
+.blob {
+    background: pink;
+    position: absolute;
+    opacity: 0,2;
+}
+
+.blob-1{
+    width: 100px;
+    height: 70px;
+    border-radius: 80% 50% 50% 80%;
+    top: 50%;
+    left: 5px;
+}
+
+.blob-2{
+    width: 90px;
+    height: 70px;
+    border-radius: 50% 50% 50% 60%;
+    bottom: 5px;
+    right: 20%;
+}
+
+.blob-3{
+    width: 50px;
+    height: 80px;
+    border-radius: 50% 50% 50% 60%;
+    top: 5px;
+    right: 5px;
+}
+
+.teacher-image{
+    background-image: url("/img/vader.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.card-content-primary,
+.card-content-secondary{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.2rem;
+}
+
+.card-content-secondary{
+    margin-top: 40%;
+}
+
+@keyframes expand {
+    100% {
+        transform: scale(1.5);
+    }
+}
+
+
