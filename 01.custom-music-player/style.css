@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f9f9f9;
+}
+
+.title{
+    font-weight: 400;
+    font-size: 2rem;
+    color: #38a7ff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.player{
+    width: 500px;
+    background: #fbfbfb;
+    position: relative;
+    min-height: 10vh;
+    border-radius: 80px;
+    padding: 20px 30px;
+    border: 2px solid #fff;
+    box-shadow: -10px -10px 15px #fff,
+                10px 10px 15px rgba(0, 0, 0, 0.1),
+                inset -5px -5px 15px #fff,
+                inset 5px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btns{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btns span{
+    width: 80px;
+    height: 80px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: #777;
+    cursor: pointer;
+    box-shadow: inset 0 -5px 5px rgba(0, 0, 0, 0.1),
+                0 5px 10px rgba(0, 0, 0, 0.1),
+                0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btns span:active,
+.btns span.active{
+    color: red;
+    box-shadow: inset 0 -7px 5px rgba(0, 0, 0, 0.025),
+                inset 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btns span.play{
+    width: 100px;
+    height: 100px;
+}
+
+
+.btns span ion-icon{
+    font-size: 2em;
+}
+
+.btns span.play ion-icon{
+    font-size: 3em;
+}
